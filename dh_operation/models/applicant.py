@@ -18,8 +18,8 @@ class DHOperation(models.Model):
     ])
     contact_number = fields.Char('Contact Number')
     id_number = fields.Char('ID Number')
-    birth_date = fields.Char('Birth Date')
-    age = fields.Integer('Age')
+    birth_date = fields.Date('Birth Date')
+    age = fields.Integer('Age',compute="_get_age")
     gender = fields.Selection([
         ('male','Male'),
         ('female','Female')
@@ -252,3 +252,13 @@ class DHOperation(models.Model):
             'view_mode' : 'tree,form',
             'target' : 'current'
         }
+    
+    @api.depends('birth_date')
+    def _get_age(self):
+        for record in self:
+            if record.birth_date != False:
+                today = date.today()
+                age = today.year - record.birth_date.year - ((today.month,today.day)<(record.birth_date.month,record.birth_date.day))
+                record['age'] = age
+            else:
+                record['age'] = 0
