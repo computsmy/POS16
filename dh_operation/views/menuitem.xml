@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="dh_operation_root"
+              name="DH Operation"
+              sequence="1" />
+    <menuitem id="documents"
+              name="Documentation"
+              parent="dh_operation_root"
+              sequence="2"/>
+    <menuitem id="configuration"
+              name="Configuration"
+              parent="dh_operation_root"
+              sequence="3"/>
+    <menuitem id="vaccination"
+              name="Vaccination"
+              parent="configuration"
+              sequence="5"/>
+
+</odoo>

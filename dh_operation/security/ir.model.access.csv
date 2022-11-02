@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+dh_operation.access_applicant,access_applicant,dh_operation.model_applicant,base.group_user,1,1,1,1
+dh_operation.access_work_experience,access_work_experience,dh_operation.model_work_experience,base.group_user,1,1,1,1
+dh_operation.access_vaccination,access_vaccination,dh_operation.model_vaccination,base.group_user,1,1,1,1
+dh_operation.access_vaccination_type,access_vaccination_type,dh_operation.model_vaccination_type,base.group_user,1,1,1,1
+dh_operation.access_vaccination_brand,access_vaccination_brand,dh_operation.model_vaccination_brand,base.group_user,1,1,1,1
+dh_operation.access_vaccination_dose,access_vaccination_dose,dh_operation.model_vaccination_dose,base.group_user,1,1,1,1
+dh_operation.access_dh_jobs,access_dh_jobs,dh_operation.model_dh_jobs,base.group_user,1,1,1,1
+dh_operation.access_skills,access_skills,dh_operation.model_skills,base.group_user,1,1,1,1
+dh_operation.access_applicant_location,access_applicant_location,dh_operation.model_applicant_location,base.group_user,1,1,1,1
+dh_operation.access_passport,access_passport,dh_operation.model_passport,base.group_user,1,1,1,1
+dh_operation.access_medical_record,access_medical_record,dh_operation.model_medical_record,base.group_user,1,1,1,1
+dh_operation.access_school_training,access_school_training,dh_operation.model_school_training,base.group_user,1,1,1,1
+dh_operation.access_visa_sticker,access_visa_sticker,dh_operation.model_visa_sticker,base.group_user,1,1,1,1
+dh_operation.access_airport_clearance,access_airport_clearance,dh_operation.model_airport_clearance,base.group_user,1,1,1,1
+dh_operation.access_dh_contract,access_dh_contract,dh_operation.model_dh_contract,base.group_user,1,1,1,1
+dh_operation.access_dh_countries,access_dh_countries,dh_operation.model_dh_countries,base.group_user,1,1,1,1

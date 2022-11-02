@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_applicant_form" model="ir.ui.view">
+        <field name="name">applicant.form</field>
+        <field name="model">applicant</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_contract" type="object" class="oe_stat_button" icon="fa-folder">
+                            <div class="o_stat_info">
+                                <field name="contract_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Contract</span>
+                            </div>
+                        </button>
+                        <button name="action_passport" type="object" class="oe_stat_button" icon="fa-book">
+                            <div class="o_stat_info">
+                                <field name="passport_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Passport</span>
+                            </div>
+                        </button>
+                        <button name="action_medical_record" type="object" class="oe_stat_button" icon="fa-stethoscope">
+                            <div class="o_stat_info">
+                                <field name="medical_record_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Medical</span>
+                            </div>
+                        </button>
+                        <button name="action_school_training" type="object" class="oe_stat_button" icon="fa-users">
+                            <div class="o_stat_info">
+                                <field name="school_training_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Training</span>
+                            </div>
+                        </button>
+                        <button name="action_visa_sticker" type="object" class="oe_stat_button" icon="fa-file-text">
+                            <div class="o_stat_info">
+                                <field name="visa_sticker_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Visa Sticker</span>
+                            </div>
+                        </button>
+                        <button name="action_airport_clearance" type="object" class="oe_stat_button" icon="fa-plane">
+                            <div class="o_stat_info">
+                                <field name="airport_clearance_count" class="o_stat_value"/>
+                                <span class="o_stat_text">Airport Clearance</span>
+                            </div>
+                        </button>
+                    </div>
+                    <field class="oe_avatar" widget="image" name="image"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1" placeholder="Applicant's Name"/>
+
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="APPLICATION'S INFORMATION">
+                            <field name="contact_number" string="Contact Number"/>
+                            <field name="id_number" string="ID Number"/>
+                            <field name="birth_date" string="Birthdate"/>
+                            <field name="age" string="Age"/>
+                            <field name="gender" string="Gender" wdiget="radio"
+                                   options="{&quot;horizontal&quot;:true}"/>
+                            <field name="height" string="Height"/>
+                            <field name="weight" string="Weight"/>
+                            <field name="marital_status" string="Marital Status"/>
+                            <field name="num_of_child" string="Number of Children"/>
+                            <field name="full_address" string="Full Address" widget="text"/>
+                        </group>
+                        <group string="APPLICATION'S INFORMATION">
+                            <field name="process_remarks" string="Process Remarks"/>
+                            <field name="jobs_id" string="Apply For"/>
+                            <field name="country_id" string="Apply In"/>
+                            <field name="fra" string="FRA"/>
+                            <field name="cv_sent_date" string="CV Sent Date"/>
+                            <field name="location" string="Current Location"/>
+                            <field name="agent_id" string="Agent Name"/>
+                            <field name="emergency_name" string="Emergency Contact Name"/>
+                            <field name="emergency_num" string="Emergency Contact number" widget="phone"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="VIDEO INTERVIEW DETAILS">
+                            <field name="video_interviewer" string="Video Interviewer"/>
+                            <field name="vid_interview_date" string="Video Interview Date"/>
+                        </group>
+                        <group string="SCHOOL INTERVIEW DETAILS">
+                            <field name="school_interviewer" string="School Interviewer"/>
+                            <field name="school_interview_date" string="School Interview Date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="EDUCATION &amp; SKILLS">
+                            <field name="education" string="Education"/>
+                            <field name="english_level" string="English Level"/>
+                            <field name="previous_experience" string="Previous Experience" widget="many2many_tags"/>
+                            <field name="willing_to" string="Willing To" widget="many2many_tags"/>
+                        </group>
+                        <group string="EDUCATION &amp; SKILLS">
+                            <field name="abroad_exp" string="Abroad Experience" widget="radio"
+                                   options="{&quot;horizontal&quot;:true}"/>
+                            <field name="arabic_level" string="Arabic Level"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group></group>
+                        <group></group>
+                    </group>
+                    <group>
+                        <group string="DOCUMENTS">
+                            <field name="passport_status" string="Passport Status"/>
+                            <field name="full_medical" string="Full Medical"/>
+                            <field name="contract_status" string="Contract Status"/>
+                            <field name="musand_status" string="Musand Status"/>
+                        </group>
+                        <group string="DOCUMENTS">
+                            <field name="school_certificate" string="School Certificate"/>
+                            <field name="good_conduct" string="Good Conduct"/>
+                            <field name="visa_sticker" string="VISA Sticker"/>
+                            <field name="airport_clearance" string="Airport Clearance"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="ARRIVAL &amp; DEPARTURE INFORMATION">
+                            <field name="office_arrival_date" string="Office Arrival Date"/>
+                        </group>
+                        <group string="ARRIVAL &amp; DEPARTURE INFORMATION">
+                            <field name="international_flight" string="International Flight"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="work_experience" string="Work Experience">
+                            <tree editable="bottom">
+                                <field name="name" string="Position Name"/>
+                                <field name="job_location" string="Job Location"/>
+                                <field name="start_date" string="Job Start Date"/>
+                                <field name="end_date" string="Job End Date"/>
+                                <field name="description" string="Description"/>
+                                <field name="application_id" string="Application ID" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="vaccine" string="Vaccination">
+                            <tree editable="bottom">
+                                <field name="name" string="Vaccination Type" invisible="1"/>
+                                <field name="vaccination_id" string="Vaccination Type"/>
+                                <field name="vaccine_dose_id" string="Vaccine Dose"/>
+                                <field name="date" string="Dose Date"/>
+                                <field name="vaccine_brand_id" string="Vaccine Brand"/>
+                                <field name="application_id" string="Application ID" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="_2x2_pic" string="2x2 Pic" widget="image"/>
+                        </group>
+                        <group>
+                            <field name="full_body_pic" string="Full Body Pic" widget="image"/>
+                        </group>
+                    </group>
+
+                </sheet>
+                <!--                <div class="oe_chatter">-->
+                <!--                    <field name="message_follower_ids" widget="mail_followers"/>-->
+                <!--                    <field name="message_ids" widget="mail_thread"/>-->
+                <!--                    <field name="activity_ids" widget="mail_activity"/>-->
+                <!--                </div>-->
+            </form>
+        </field>
+    </record>
+    <record id="view_applicant_tree" model="ir.ui.view">
+        <field name="name">applicant.tree</field>
+        <field name="model">applicant</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!--    below are the menu item declaration-->
+    <record id="action_applicant" model="ir.actions.act_window">
+        <field name="name">Applicant</field>
+        <field name="res_model">applicant</field>
+        <!--        <field name="inherit_id" ref="account.view_move_form"/>-->
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Start Adding Applications!
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="applicant"
+            name="Applicant"
+            parent="dh_operation_root"
+            action="action_applicant"
+            sequence="1"
+    />
+
+</odoo>
